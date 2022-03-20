@@ -31,3 +31,66 @@
 //	return 0;
 //}
 
+////写一段代码来确定是小端存储还是大端存储
+//int main()
+//{
+//	int a = 1;
+//	char* p = (char*) & a;
+//	if (*p == 1)
+//	{
+//		printf("小端\n");
+//	}
+//	else
+//	{
+//		printf("大端\n");
+//	}
+//	return 0;
+//}
+
+////int check_sys()
+////{
+////	int a = 1;
+////	char* p = (char*)&a;
+////	return *p;
+////}
+//
+//int check_sys()
+//{
+//	int a = 1;
+//	return *(char*)&a;
+//}
+//
+////写一段代码来确定是小端存储还是大端存储
+//int main()
+//{
+//	int ret = check_sys();
+//	if (ret == 1)
+//		printf("小端\n");
+//	else
+//		printf("大端\n");
+//	return 0;
+//}
+
+//int main()
+//{
+//	char a = -1;
+//	signed char b = -1;
+//	unsigned char c = -1;
+//	printf("a=%d,b=%d,c=%d", a, b, c);
+//	return 0;
+//}
+
+int main()
+{
+	char a = -128;
+	char b = 128;
+	//10000000000000000000000010000000
+	//11111111111111111111111101111111
+	//11111111111111111111111110000000 - 补码
+	//10000000
+	//11111111111111111111111110000000 - 补码(整型提升)
+	printf("%u\n%u\n", a,b);
+	//%d - 打印十进制的有符号数字
+	//%u - 打印十进制的无符号数字
+	return 0;
+}
